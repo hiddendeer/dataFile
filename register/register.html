@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>注册账户</title>
+  <link rel="stylesheet" href="css/register_css.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <style type="text/css">
+   .form-control{
+    width:65px;
+    height:40px;
+    margin-top:-30px;
+    margin-left:61px;
+   }
+ </style>
+</head>
+<body class="background">
+  <div class="layer">
+    <div class="register_class">
+      <span id="register_id">注册</span>
+      <form id="fm" action="" method="post">
+        <div id="user_id">
+          <label for="input_user">用户名:</label>
+          <i>&nbsp&nbsp&nbsp&nbsp&nbsp</i>
+          <input type="text" id="input_user" name="username" placeholder="请输入用户名" value="" class="username"><i class="mi">*</i>
+        </div>
+        <div id="pass_id">
+          <label for="input_pass">密码:</label>
+          <i>&nbsp&nbsp&nbsp&nbsp&nbsp</i>
+          <input type="password" id="input_pass" name="password" placeholder="密码"><i class="mi">*</i>
+        </div>
+        <div id="confirmpass">
+          <label for="input_confirm">重输密码:</label>
+          <i>&nbsp&nbsp&nbsp&nbsp</i>
+          <input type="password" id="input_confirm" name="confirm" placeholder="重新输入密码"><i class="mi">*</i>
+        </div>
+        <div id="email_id">
+          <label for="input_email">电子邮箱:</label>
+          <i>&nbsp&nbsp&nbsp&nbsp</i>
+          <input type="email" id="input_email" name="email" placeholder="电子邮箱" value=""><i class="mi">*</i>
+        </div>
+        <div id="nick_id">
+          <label for="input_nick">昵称:</label>
+          <i>&nbsp&nbsp&nbsp&nbsp</i>
+          <input type="text" id="input_nick" name="nick" placeholder="昵称">
+        </div>
+        <div id="sex_id">
+          <label for="form-control_id">性别:</label>
+          <select class="form-control" id="form-control_id" style="" name="sex_name">
+            <option>男</option>
+            <option>女</option>
+          </select>
+        </div>
+        <div id="sub_id">
+          <input type="button" class="btn btn-default submit" style="margin-left:55px;" value="立即注册" name="submit">
+          <!-- <input type="reset" class="btn btn-default" style="margin-top:10px;margin-left:20px;" value="重设" name="reset_name"> -->
+        </div>
+        <div id='json_data'></div>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+<script type="text/javascript">
+$('.submit').click(function(){
+      var username=$('#input_user').val();
+      var password=$('#input_pass').val();
+      var confirm=$('#input_confirm').val();
+      var email=$('#input_email').val();
+      var nick=$('#input_nick').val();
+      var sex_name=$('#form-control_id').val();
+      $.ajax({
+                 type: "post",
+                 url: "http://localhost/train/chenshuaiyuan/register/admin/register.php",
+                 data:{username:username,password:password,confirm:confirm,email:email,nick:nick,sex_name:sex_name},
+                 // ,password:password,confirm:confirm,email:input_email,nick:nick,sex_name:sex_name
+                 async: true,
+                 dataType: "json",
+                 success: function (res) {
+                   $('#json_data').html(res.message);
+                   // alert(res.message);
+                // JSON.parse(json.name);
+       }})
+})
+
+</script>
+<!-- <script type="text/javascript">
+    $('.btn-default').click(function(){
+      var input_user =$('#input_user').val();
+      var input_pass =$('#input_pass').val();
+      var input_confirm =$('#input_confirm').val();
+      var input_email = $('#input_email').val();
+      var mi =$('.mi');
+      if (input_user=='') {
+        alert('用户名必填');
+        return false;
+      }else if (input_pass=='') {
+        alert('密码不得为空');
+        return false;
+      }else if(input_confirm==''){
+        alert('确认密码');
+        return false;
+      }else if (input_pass != input_confirm) {
+        alert('两次密码不一致');
+        return false;
+      }else if('input_email'==''){
+        alert('电子邮箱必填');
+        return false;
+      }else{
+        alert('即将跳转');
+      }
+    })
+</script> -->
+
+</html>

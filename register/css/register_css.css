@@ -1,0 +1,131 @@
+.background{
+  background: #eee;
+}
+.layer{
+  width: 1000px;
+  height: 800px;
+  position: relative;
+  margin: 0 auto;
+  /* left: 110px;
+  top: 100px; */
+}
+.register_class{
+  width: 400px;
+  height: 450px;
+  /* border: 1px solid black; */
+  /* position: absolute; */
+  margin:0 auto;
+  margin-top: 100px;
+  background: white;
+  border: 1px solid #ededed;
+}
+.mi{
+  margin-left: 10px;
+  color: red;
+  font-size: 18px;
+}
+/* .register_class:hover{
+  border: 1px solid #ededed;
+} */
+#register_id{
+  font-size: 30px;
+  color: #25bb9b;
+  /* text-align: center; */
+  margin-left:180px;
+}
+#user_id{
+  padding-left: 60px;
+  padding-top: 30px;
+}
+#pass_id{
+  padding-left: 75px;
+  padding-top: 10px;
+
+}
+#confirmpass{
+  padding-left: 50px;
+  padding-top:10px;
+}
+#email_id{
+  padding-left: 50px;
+  padding-top: 10px;
+}
+#nick_id{
+  padding-left: 75px;
+  padding-top:10px;
+}
+#sex_id{
+  line-height: 18px;
+  padding-left: 75px;
+  padding-top:25px;
+}
+#reset_id{
+  float: right;
+}
+#sub_id{
+  /* float: right; */
+  width: 180px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+#input_user{
+width: 200px;
+height: 30px;
+border-radius: 10px;
+color: rgba(136, 136, 136, 1);
+font-size: 14px;
+text-align: left;
+font-family: Microsoft Yahei;
+border: 1px solid rgba(187, 187, 187, 1);
+padding-left: 10px;
+}
+#input_pass{
+width: 200px;
+height: 30px;
+border-radius: 10px;
+color: rgba(136, 136, 136, 1);
+font-size: 14px;
+text-align: left;
+font-family: Microsoft Yahei;
+border: 1px solid rgba(187, 187, 187, 1);
+padding-left: 10px;
+}
+#input_confirm{
+width: 200px;
+height: 30px;
+border-radius: 10px;
+color: rgba(136, 136, 136, 1);
+font-size: 14px;
+text-align: left;
+font-family: Microsoft Yahei;
+border: 1px solid rgba(187, 187, 187, 1);
+padding-left: 10px;
+}
+#input_email{
+width: 200px;
+height: 30px;
+border-radius: 10px;
+color: rgba(136, 136, 136, 1);
+font-size: 14px;
+text-align: left;
+font-family: Microsoft Yahei;
+border: 1px solid rgba(187, 187, 187, 1);
+padding-left: 10px;
+}
+#input_nick{
+margin-left: 4px;
+height: 30px;
+border-radius: 10px;
+color: rgba(136, 136, 136, 1);
+font-size: 14px;
+text-align: left;
+font-family: Microsoft Yahei;
+border: 1px solid rgba(187, 187, 187, 1);
+padding-left: 10px;
+}
+#json_data{
+  /* margin-left: 100px; */
+  text-align: center;
+  color: red;
+}
