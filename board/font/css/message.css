@@ -1,0 +1,26 @@
+#center_id{
+  width: 800px;
+  height: 700px;
+  margin-top: 260px;
+  margin-left: 400px;
+}
+#text_id{
+  display: inline;
+  margin-left: 62px;
+  width: 365px;
+}
+#area{
+  margin-top: 10px;
+  margin-left: 112px;
+}
+#btn{
+  margin-left: 115px;
+  margin-top: 20px;
+}
+#email{
+  display: inline;
+  margin-left: 50px;
+}
+#span{
+
+}

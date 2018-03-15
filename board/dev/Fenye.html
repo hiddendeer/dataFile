@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>分页</title>
+</head>
+<script type="text/javascript">
+/**
+* AJAX
+* 1.创建ajax对象
+* 2.建立连接
+* 3.判断ajax准备状态及状态码
+* 4.发送请求
+*/
+function showList(pageNow){
+
+    //创建ajax对象
+    var xmlHttp = new XMLHttpRequest();
+
+    //建立连接
+    xmlHttp.open('get','./Fenye.php?pageNow='+pageNow);
+
+    //判断ajax准备状态及状态码
+    xmlHttp.onreadystatechange = function(){
+
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            //alert(xmlHttp.readyState);
+            document.getElementById('result').innerHTML = xmlHttp.responseText;
+        }
+    }
+
+    //发送请求
+    xmlHttp.send(null);
+}
+
+//默认显示第1页
+window.onload = function(){
+
+    showList(1);
+}
+
+</script>
+<body>
+<!-- <input type="text"> -->
+<div id="result">
+    <!-- 此处显示信息！ -->
+</div>
+</body>
+</html>

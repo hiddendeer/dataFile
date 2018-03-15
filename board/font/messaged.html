@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layui</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+<body>
+  <div id="result">
+  </div>
+
+  <script src="./layui/layui.js"></script>
+  <script type="text/javascript">
+  /**
+  * AJAX
+  * 1.创建ajax对象
+  * 2.建立连接
+  * 3.判断ajax准备状态及状态码
+  * 4.发送请求
+  */
+  function showList(pageNow){
+    // $.ajax{
+    //   type:'post',
+    //   url:'../dev/Fenye.php?pageNow='+pageNow,
+    //   data{},
+    //   async:true,
+    //   success:function(res){
+    //     $('#result').innerHTML = res.responseText;
+    //   }
+    // }
+    //创建ajax对象
+    var xmlHttp = new XMLHttpRequest();
+
+    //建立连接
+    xmlHttp.open('get','../dev/Fenye.php?pageNow='+pageNow);
+
+    //判断ajax准备状态及状态码
+    xmlHttp.onreadystatechange = function(){
+
+      if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+        //alert(xmlHttp.readyState);
+        document.getElementById('result').innerHTML = xmlHttp.responseText;
+      }
+    }
+
+    //发送请求
+    xmlHttp.send(null);
+  }
+
+  //默认显示第1页
+  window.onload = function(){
+
+    showList(1);
+  }
+
+</script>
+</body>
+</html>
