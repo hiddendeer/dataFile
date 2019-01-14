@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-for="(item,key,index) of userinfo">
+            {{item}} -- {{key}} -- {{index}}
+        </div>
+    </div>
+</body>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                userinfo:{
+                    name:'陈帅元',
+                    age:'25',
+                    gener:'male',
+                    salary:'secret'
+                }
+            }
+        });
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+      
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        template:"<div>我不是啊</div>",
+        data:{
+            message:'hello world',
+        },
+        beforeCreate:function() {
+            console.log(this.$el);
+            console.log('我就是');
+            
+        },
+        created:function () {
+            console.log(this.$el)
+            console.log('陈帅远')
+        },
+        beforeMount:function() {
+            console.log(this.$el)
+            console.log('暗夜');
+        },
+    });
+</script>
+</html>
